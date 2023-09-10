@@ -1,9 +1,9 @@
-import { renderLevel1Page } from "./render.js";
+import { renderLevel1Page, renderLevel2Page, renderLevel3Page } from "./render.js";
 
 const appElement = document.getElementById("app");
 
 const renderStartPage = () => {
-  const startPageHtml = `
+    const startPageHtml = `
     <span class="choose_level">Выбери сложность</span>
     <div class="prod_checbox">
         <div class="radio-toolbar">
@@ -17,10 +17,10 @@ const renderStartPage = () => {
             <label for="level3"><span>3</span></label>
         </div>
     </div>
-    <button class="start_btn" id="start_btn">Старт</button>
+    <button class="start_btn level1_btn level2_btn level3_btn" id="start_btn">Старт</button>
     `;
 
-  appElement.innerHTML = startPageHtml;
+    appElement.innerHTML = startPageHtml;
 };
 
 renderStartPage();
@@ -31,45 +31,42 @@ const level3Label = document.querySelector('label[for="level3"]');
 const startBtnElement = document.getElementById("start_btn");
 
 function toLocalStorage(value) {
-  localStorage.setItem("level", JSON.stringify(value));
+    localStorage.setItem("level", JSON.stringify(value));
 }
 
 level1Label.addEventListener("click", () => {
-  toLocalStorage("level 1");
-  console.log(localStorage.getItem("level"));
+    toLocalStorage("level 1");
+    console.log(localStorage.getItem("level"));
 });
 
 level2Label.addEventListener("click", () => {
-  toLocalStorage("level 2");
-  console.log(localStorage.getItem("level"));
+    toLocalStorage("level 2");
+    console.log(localStorage.getItem("level"));
 });
 
 level3Label.addEventListener("click", () => {
-  toLocalStorage("level 3");
-  console.log(localStorage.getItem("level"));
+    toLocalStorage("level 3");
+    console.log(localStorage.getItem("level"));
 });
 
 function getFromLocalStorage() {
-  const storedValue = localStorage.getItem("level");
-  // Check if storedValue is not null or undefined
-  if (storedValue !== null && storedValue !== undefined) {
-    return JSON.parse(storedValue);
-  }
-  // Return a default value or handle the case when no value is found
-  return null; // You can change this default value as needed
+    const storedValue = localStorage.getItem("level");
+    // Checking if storedValue is not null or undefined
+    if (storedValue !== null && storedValue !== undefined) {
+        return JSON.parse(storedValue);
+    }
+
+    return null;
 }
 
 startBtnElement.addEventListener("click", () => {
-  const storedValue = getFromLocalStorage();
-  console.log(storedValue);
-  if (storedValue === "level 1") {
-    renderLevel1Page();
-  }
-  // Add more conditions for other levels if needed
+    const storedValue = getFromLocalStorage();
+    console.log(storedValue);
+    if (storedValue === "level 1") {
+        renderLevel1Page();
+    } else if (storedValue === "level 2") {
+        renderLevel2Page();
+    } else {
+        renderLevel3Page();
+    }
 });
-
-//  else if (storedValue === "level 2") {
-//     renderLevel2Page();
-//   } else {
-//     renderLevel3Page();
-//   }
