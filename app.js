@@ -1,4 +1,4 @@
-import { renderLevel1Page, renderLevel2Page, renderLevel3Page } from "./render.js";
+import { renderGamePage } from "./render.js";
 
 const appElement = document.getElementById("app");
 
@@ -62,11 +62,5 @@ function getFromLocalStorage() {
 startBtnElement.addEventListener("click", () => {
     const storedValue = getFromLocalStorage();
     console.log(storedValue);
-    if (storedValue === "level 1") {
-        renderLevel1Page();
-    } else if (storedValue === "level 2") {
-        renderLevel2Page();
-    } else {
-        renderLevel3Page();
-    }
+    renderGamePage(storedValue);
 });
