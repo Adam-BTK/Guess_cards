@@ -17,7 +17,7 @@ const renderStartPage = () => {
             <label for="level3"><span>3</span></label>
         </div>
     </div>
-    <button class="start_btn level1_btn level2_btn level3_btn" id="start_btn">Старт</button>
+    <button class="start_btn" id="start_btn">Старт</button>
     `;
 
     appElement.innerHTML = startPageHtml;
@@ -62,5 +62,5 @@ function getFromLocalStorage() {
 startBtnElement.addEventListener('click', () => {
     const storedValue = getFromLocalStorage();
     console.log(storedValue);
-    renderGamePage(storedValue);
+    renderGamePage(storedValue, appElement);
 });
