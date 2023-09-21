@@ -10,9 +10,13 @@
 body {
     font-family: 'StratosSkyeng';
     background-color: #004980;
+}
+
+.checkbox {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    align-items: center;
+    height: 100vh;
 }
 
 .choose_box {
@@ -75,7 +79,7 @@ body {
     color: #0080c1;
 }
 
-.radio-toolbar input[type='radio']:checked + label {
+.radio-toolbar input[type='radio']:checked+label {
     background-color: #00c2ff;
     border: 1px solid #00c2ff;
     color: #fff;
@@ -119,11 +123,15 @@ body {
     border-radius: 12px;
     border: none;
     font-family: 'StratosSkyeng';
-    /* margin-left: 500px; */
+    margin-right: 50px;
 }
 
 .game-container {
-   display: flex;
-   align-items: center;
-   gap: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.timer_img {
+    margin-left: 50px;
 }
