@@ -126,12 +126,20 @@ body {
     margin-right: 50px;
 }
 
-.game-container {
+.timer_btn_box {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 150px;
 }
 
 .timer_img {
     margin-left: 50px;
+}
+
+.img_box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }

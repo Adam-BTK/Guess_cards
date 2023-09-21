@@ -6,16 +6,57 @@ const checkboxElement = document.getElementById('checkbox');
 export const renderGamePage = (storedValue, appElement) => {
     appElement.style.display = 'none';
     const level1PageHtml = `    
-    <div class="timer_img"><img src="./img/таймер.svg" alt=""></div>
-    <button class="restart_btn" id="level1_btn">Начать заново</button>    
+    <div class="timer_btn_box"><div class="timer_img"><img src="./img/таймер.svg" alt=""></div>
+    <button class="restart_btn" id="level1_btn">Начать заново</button> 
+    </div>
+    <div class="img_container">
+    <div class="img_box">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt="">
+    </div>
+    <div class="img_box">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt="">
+    </div>
+    </div>  
     `;
     const level2PageHtml = `
-    <div><img src="./img/таймер.svg" alt=""></div>    
-    <button class="restart_btn" id="level2_btn">Начать заново</button>
+    <div class="timer_btn_box"><div class="timer_img"><img src="./img/таймер.svg" alt=""></div>
+    <button class="restart_btn" id="level1_btn">Начать заново</button> 
+    </div>
+    <div class="img_container">
+    <div class="img_box">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    </div>
+    <div class="img_box">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    </div>
+    </div> 
     `;
     const level3PageHtml = `
-    <div><img src="./img/таймер.svg" alt=""></div>   
-    <button class="restart_btn" id="level3_btn">Начать заново</button>
+    <div class="timer_btn_box"><div class="timer_img"><img src="./img/таймер.svg" alt=""></div>
+    <button class="restart_btn" id="level1_btn">Начать заново</button> 
+    </div>
+    <div class="img_container">
+    <div class="img_box">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt="">
+    </div>
+    <div class="img_box">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
+    <img src="./img/рубашка.png" alt="">
+    </div>
+    </div> 
     `;
 
     if (storedValue === 'level 1') {
