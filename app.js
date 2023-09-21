@@ -5,7 +5,7 @@ const appElement = document.getElementById('app');
 const renderStartPage = () => {
     const startPageHtml = `
     <span class="choose_level">Выбери сложность</span>
-    <div class="prod_checbox">
+    <div class="prod_checkbox">
         <div class="radio-toolbar">
             <input type="radio" id="level1" name="radios" value="easy" checked class="input_level">
             <label for="level1"><span>1</span></label>
