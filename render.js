@@ -1,71 +1,73 @@
-const level1AppElement = document.querySelector('.level1');
-const level2AppElement = document.querySelector('.level2');
-const level3AppElement = document.querySelector('.level3');
-const checkboxElement = document.getElementById('checkbox');
+// const level1AppElement = document.querySelector('.level1');
+// const level2AppElement = document.querySelector('.level2');
+// const level3AppElement = document.querySelector('.level3');
+// const checkboxElement = document.getElementById('checkbox');
 
-export const renderGamePage = (storedValue, appElement) => {
-  appElement.style.display = 'none';
-  const level1PageHtml = `    
-    <div class="timer_btn_box"><div class="timer_img"><img src="./img/таймер.svg" alt=""></div>
-    <button class="restart_btn" id="level1_btn">Начать заново</button> 
-    </div>
-    <div class="img_container">
-    <div class="img_box">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt="">
-    </div>
-    <div class="img_box">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt="">
-    </div>
-    </div>  
-    `;
-  const level2PageHtml = `
-    <div class="timer_btn_box"><div class="timer_img"><img src="./img/таймер.svg" alt=""></div>
-    <button class="restart_btn" id="level1_btn">Начать заново</button> 
-    </div>
-    <div class="img_container">
-    <div class="img_box">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    </div>
-    <div class="img_box">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    </div>
-    </div> 
-    `;
-  const level3PageHtml = `
-    <div class="timer_btn_box"><div class="timer_img"><img src="./img/таймер.svg" alt=""></div>
-    <button class="restart_btn" id="level1_btn">Начать заново</button> 
-    </div>
-    <div class="img_container">
-    <div class="img_box">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt="">
-    </div>
-    <div class="img_box">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt=""><img src="./img/рубашка.png" alt="">
-    <img src="./img/рубашка.png" alt="">
-    </div>
-    </div> 
-    `;
+// // Определение функции для генерации случайных карт
+// const generateRandomCards = (numberOfCards, deck) => {
+//   const selectedCards = deck.slice(0, numberOfCards);
+//   return selectedCards;
+// };
 
-  if (storedValue === 'level 1') {
-    level1AppElement.innerHTML = level1PageHtml;
-  } else if (storedValue === 'level 2') {
-    level2AppElement.innerHTML = level2PageHtml;
-  } else {
-    level3AppElement.innerHTML = level3PageHtml;
-  }
-  // Cтиль display: none; для скрытия элемента
-  checkboxElement.style.display = 'none';
-};
+// // Определение функции для отображения карт на игровом поле
+// const displayCards = (cards) => {
+//   // Очистите игровой контейнер перед отображением новых карт
+//   level1AppElement.innerHTML = '';
+//   level2AppElement.innerHTML = '';
+//   level3AppElement.innerHTML = '';
+
+//   cards.forEach((card, index) => {
+//     const cardElement = document.createElement('div');
+//     cardElement.classList.add('card');
+//     cardElement.dataset.index = index; // Храните индекс карты в атрибуте data
+
+//     const cardFront = document.createElement('div');
+//     cardFront.classList.add('card-front');
+//     // Установите стиль для лицевой стороны карты (например, изображение масти и ранга)
+
+//     const cardBack = document.createElement('div');
+//     cardBack.classList.add('card-back');
+//     // Установите стиль для обратной стороны карты (например, изображение "рубашки")
+
+//     cardElement.appendChild(cardFront);
+//     cardElement.appendChild(cardBack);
+
+//     // В зависимости от уровня сложности, добавьте карты на соответствующее игровое поле
+//     if (storedValue === 'level 1') {
+//       level1AppElement.appendChild(cardElement);
+//     } else if (storedValue === 'level 2') {
+//       level2AppElement.appendChild(cardElement);
+//     } else {
+//       level3AppElement.appendChild(cardElement);
+//     }
+//   });
+// };
+
+// Определение функции для рендеринга игровой страницы
+// export const renderGamePage = (storedValue, appElement) {
+//   appElement.style.display = 'none';
+
+//   // Определите количество карт в зависимости от уровня сложности
+//   let numberOfCards;
+//   if (storedValue === 'level 1') {
+//     numberOfCards = 6;
+//   } else if (storedValue === 'level 2') {
+//     numberOfCards = 12;
+//   } else {
+//     numberOfCards = 18;
+//   }
+
+//   const deck = generateDeck();
+//   shuffleDeck(deck);
+//   const selectedCards = generateRandomCards(numberOfCards, deck);
+
+//   displayCards(selectedCards);
+
+//   // Показывайте карты пользователю в течение 5 секунд
+//   setTimeout(() => {
+//     // Скройте карты
+//     // Добавьте обработчики кликов на карты и реализуйте логику сравнения
+//   }, 5000);
+
+//   // Добавьте обработчики кликов на карты и реализуйте логику сравнения
+// };
