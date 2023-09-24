@@ -3,7 +3,7 @@ import { renderGamePage } from './render.js';
 const appElement = document.getElementById('app');
 
 const renderStartPage = () => {
-    const startPageHtml = `
+  const startPageHtml = `
     <span class="choose_level">Выбери сложность</span>
     <div class="prod_checkbox">
         <div class="radio-toolbar">
@@ -20,7 +20,7 @@ const renderStartPage = () => {
     <button class="start_btn" id="start_btn">Старт</button>
     `;
 
-    appElement.innerHTML = startPageHtml;
+  appElement.innerHTML = startPageHtml;
 };
 
 renderStartPage();
@@ -31,36 +31,36 @@ const level3Label = document.querySelector('label[for="level3"]');
 const startBtnElement = document.getElementById('start_btn');
 
 function toLocalStorage(value) {
-    localStorage.setItem('level', JSON.stringify(value));
+  localStorage.setItem('level', JSON.stringify(value));
 }
 
 level1Label.addEventListener('click', () => {
-    toLocalStorage('level 1');
-    console.log(localStorage.getItem('level'));
+  toLocalStorage('level 1');
+  console.log(localStorage.getItem('level'));
 });
 
 level2Label.addEventListener('click', () => {
-    toLocalStorage('level 2');
-    console.log(localStorage.getItem('level'));
+  toLocalStorage('level 2');
+  console.log(localStorage.getItem('level'));
 });
 
 level3Label.addEventListener('click', () => {
-    toLocalStorage('level 3');
-    console.log(localStorage.getItem('level'));
+  toLocalStorage('level 3');
+  console.log(localStorage.getItem('level'));
 });
 
 function getFromLocalStorage() {
-    const storedValue = localStorage.getItem('level');
-    // Checking if storedValue is not null or undefined
-    if (storedValue !== null && storedValue !== undefined) {
-        return JSON.parse(storedValue);
-    }
+  const storedValue = localStorage.getItem('level');
+  // Checking if storedValue is not null or undefined
+  if (storedValue !== null && storedValue !== undefined) {
+    return JSON.parse(storedValue);
+  }
 
-    return null;
+  return null;
 }
 
 startBtnElement.addEventListener('click', () => {
-    const storedValue = getFromLocalStorage();
-    console.log(storedValue);
-    renderGamePage(storedValue, appElement);
+  const storedValue = getFromLocalStorage();
+  console.log(storedValue);
+  renderGamePage(storedValue, appElement);
 });

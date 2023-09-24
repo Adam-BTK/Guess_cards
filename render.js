@@ -4,8 +4,8 @@ const level3AppElement = document.querySelector('.level3');
 const checkboxElement = document.getElementById('checkbox');
 
 export const renderGamePage = (storedValue, appElement) => {
-    appElement.style.display = 'none';
-    const level1PageHtml = `    
+  appElement.style.display = 'none';
+  const level1PageHtml = `    
     <div class="timer_btn_box"><div class="timer_img"><img src="./img/таймер.svg" alt=""></div>
     <button class="restart_btn" id="level1_btn">Начать заново</button> 
     </div>
@@ -20,7 +20,7 @@ export const renderGamePage = (storedValue, appElement) => {
     </div>
     </div>  
     `;
-    const level2PageHtml = `
+  const level2PageHtml = `
     <div class="timer_btn_box"><div class="timer_img"><img src="./img/таймер.svg" alt=""></div>
     <button class="restart_btn" id="level1_btn">Начать заново</button> 
     </div>
@@ -37,7 +37,7 @@ export const renderGamePage = (storedValue, appElement) => {
     </div>
     </div> 
     `;
-    const level3PageHtml = `
+  const level3PageHtml = `
     <div class="timer_btn_box"><div class="timer_img"><img src="./img/таймер.svg" alt=""></div>
     <button class="restart_btn" id="level1_btn">Начать заново</button> 
     </div>
@@ -59,13 +59,13 @@ export const renderGamePage = (storedValue, appElement) => {
     </div> 
     `;
 
-    if (storedValue === 'level 1') {
-        level1AppElement.innerHTML = level1PageHtml;
-    } else if (storedValue === 'level 2') {
-        level2AppElement.innerHTML = level2PageHtml;
-    } else {
-        level3AppElement.innerHTML = level3PageHtml;
-    }
-    // Cтиль display: none; для скрытия элемента
-    checkboxElement.style.display = 'none';
+  if (storedValue === 'level 1') {
+    level1AppElement.innerHTML = level1PageHtml;
+  } else if (storedValue === 'level 2') {
+    level2AppElement.innerHTML = level2PageHtml;
+  } else {
+    level3AppElement.innerHTML = level3PageHtml;
+  }
+  // Cтиль display: none; для скрытия элемента
+  checkboxElement.style.display = 'none';
 };

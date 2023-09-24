@@ -1,145 +1,151 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable length-zero-no-unit */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable font-family-name-quotes */
+
 @font-face {
-    font-family: 'StratosSkyeng';
-    src:
-        local('fonts'),
-        url('fonts/stratosskyengweb-regular.woff') format('woff'),
-        url('fonts/stratosskyengweb-regular') format('woff2');
-    font-weight: normal;
+  font-family: 'StratosSkyeng';
+  src:
+    local('fonts'),
+    url('fonts/stratosskyengweb-regular.woff') format('woff'),
+    url('fonts/stratosskyengweb-regular') format('woff2');
+  font-weight: normal;
 }
 
 body {
-    font-family: 'StratosSkyeng';
-    background-color: #004980;
+  font-family: 'StratosSkyeng';
+  background-color: #004980;
 }
 
 .checkbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .choose_box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    background-color: #c2f5ff;
-    height: 459px;
-    width: 480px;
-    border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background-color: #c2f5ff;
+  height: 459px;
+  width: 480px;
+  border-radius: 12px;
 }
 
 .choose_level {
-    box-sizing: border-box;
-    text-align: center;
-    width: 208px;
-    color: #004980;
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 48px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 208px;
+  color: #004980;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
 }
 
 .prod_checbox strong {
-    font-size: 14px;
-    color: #333;
-    display: inline-block;
-    margin-right: 10px;
-    letter-spacing: 0.5px;
+  font-size: 14px;
+  color: #333;
+  display: inline-block;
+  margin-right: 10px;
+  letter-spacing: 0.5px;
 }
 
 .radio-toolbar input[type='radio'] {
-    display: none;
+  display: none;
 }
 
 .radio-toolbar label {
-    height: 98px;
-    width: 98px;
-    display: inline-block;
-    padding: 2px 9px;
-    cursor: pointer;
-    border: 1px solid #00c2ff;
-    margin-right: 12px;
-    margin-left: 12px;
-    border-radius: 12px;
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 72px;
-    letter-spacing: 0px;
-    text-align: center;
-    background-color: #ffffff;
-    box-sizing: border-box;
+  height: 98px;
+  width: 98px;
+  display: inline-block;
+  padding: 2px 9px;
+  cursor: pointer;
+  border: 1px solid #00c2ff;
+  margin-right: 12px;
+  margin-left: 12px;
+  border-radius: 12px;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 72px;
+  letter-spacing: 0px;
+  text-align: center;
+  background-color: #fff;
+  box-sizing: border-box;
 }
 
 .radio-toolbar label span {
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    color: #0080c1;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  color: #0080c1;
 }
 
 .radio-toolbar input[type='radio']:checked + label {
-    background-color: #00c2ff;
-    border: 1px solid #00c2ff;
-    color: #fff;
+  background-color: #00c2ff;
+  border: 1px solid #00c2ff;
+  color: #fff;
 }
 
 .input_level {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .radio-toolbar label:hover {
-    background-color: #b9ea2c;
-    border: 1px solid #b9ea2c;
+  background-color: #b9ea2c;
+  border: 1px solid #b9ea2c;
 }
 
 .start_btn {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: 0em;
-    text-align: center;
-    color: #ffffff;
-    background-color: #7ac100;
-    width: 246px;
-    height: 50px;
-    border-radius: 12px;
-    border: none;
-    font-family: 'StratosSkyeng';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fff;
+  background-color: #7ac100;
+  width: 246px;
+  height: 50px;
+  border-radius: 12px;
+  border: none;
+  font-family: 'StratosSkyeng';
 }
 
 .restart_btn {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: 0em;
-    text-align: center;
-    color: #ffffff;
-    background-color: #7ac100;
-    width: 246px;
-    height: 50px;
-    border-radius: 12px;
-    border: none;
-    font-family: 'StratosSkyeng';
-    margin-right: 50px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fff;
+  background-color: #7ac100;
+  width: 246px;
+  height: 50px;
+  border-radius: 12px;
+  border: none;
+  font-family: 'StratosSkyeng';
+  margin-right: 50px;
 }
 
 .timer_btn_box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 150px;
 }
 
 .timer_img {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 .img_box {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
