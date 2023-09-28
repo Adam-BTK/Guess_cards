@@ -3,7 +3,7 @@ import { generateDeck, shuffleDeck } from './app.js';
 const level1AppElement = document.querySelector('.level1');
 const level2AppElement = document.querySelector('.level2');
 const level3AppElement = document.querySelector('.level3');
-// const checkboxElement = document.getElementById('checkbox');
+const checkboxElement = document.getElementById('checkbox');
 
 // Определение функции для генерации случайных карт
 const generateRandomCards = (numberOfCards, deck) => {
@@ -35,7 +35,7 @@ const displayCards = (cards, storedValue) => {
     cardElement.appendChild(cardBack);
 
     // Установите фоновое изображение на лицевой стороне карты в зависимости от её индекса
-    cardFront.style.backgroundImage = `url(./img/card${index + 1}.png)`;
+    cardFront.style.backgroundImage = `url(./img/рубашка.png)`;
 
     // В зависимости от уровня сложности, добавьте карты на соответствующее игровое поле
     if (storedValue === 'level 1') {
@@ -49,8 +49,8 @@ const displayCards = (cards, storedValue) => {
 };
 
 // Определение функции для рендеринга игровой страницы
-export const renderGamePage = (storedValue, appElement) => {
-  appElement.style.display = 'none';
+export const renderGamePage = (storedValue) => {
+  checkboxElement.style.display = 'none';
 
   // Определите количество карт в зависимости от уровня сложности
   let numberOfCards;

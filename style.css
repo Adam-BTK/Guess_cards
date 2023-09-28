@@ -132,6 +132,17 @@ body {
   margin-right: 50px;
 }
 
+.game-container {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  gap: 10px;
+  align-content: center;
+}
+
 .timer_btn_box {
   display: flex;
   align-items: center;
@@ -148,4 +159,10 @@ body {
   justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
+}
+
+.card {
+  height: 133px;
+  width: 95px;
+  background-color: forestgreen;
 }
