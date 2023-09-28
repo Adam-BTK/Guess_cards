@@ -1,4 +1,5 @@
 import { generateDeck, shuffleDeck } from './app.js';
+import { playboxElement } from './app.js';
 
 const level1AppElement = document.querySelector('.level1');
 const level2AppElement = document.querySelector('.level2');
@@ -51,6 +52,7 @@ const displayCards = (cards, storedValue) => {
 // Определение функции для рендеринга игровой страницы
 export const renderGamePage = (storedValue) => {
   checkboxElement.style.display = 'none';
+  playboxElement.style.display = 'block';
 
   // Определите количество карт в зависимости от уровня сложности
   let numberOfCards;

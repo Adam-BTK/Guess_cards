@@ -44,6 +44,8 @@ const renderStartPage = () => {
   appElement.innerHTML = startPageHtml;
 };
 
+export const playboxElement = document.getElementById('playbox');
+playboxElement.style.display = 'none';
 renderStartPage();
 
 const level1Label = document.querySelector('label[for="level1"]');
