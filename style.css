@@ -161,8 +161,7 @@ body {
   margin-bottom: 10px;
 }
 
-.card {
+.card-front {
   height: 133px;
   width: 95px;
-  background-color: forestgreen;
 }
