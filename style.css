@@ -164,6 +164,7 @@ body {
 .card-front {
   height: 133px;
   width: 95px;
+  background-image: url('./img/рубашка.png');
 }
 
 /* .card-back {

@@ -6,6 +6,51 @@ const level2AppElement = document.querySelector('.level2');
 const level3AppElement = document.querySelector('.level3');
 const checkboxElement = document.getElementById('checkbox');
 
+const cardData = [
+  { rank: '6', suit: 'пики', image: '6 пики.png' },
+  { rank: '7', suit: 'пики', image: '7 пики.png' },
+  { rank: '8', suit: 'пики', image: '8 пики.png' },
+  { rank: '9', suit: 'пики', image: '9 пики.png' },
+  { rank: '10', suit: 'пики', image: '10 пики.png' },
+  { rank: 'Валет', suit: 'пики', image: 'Валет пики.png' },
+  { rank: 'Дама', suit: 'пики', image: 'Дама пики.png' },
+  { rank: 'Король', suit: 'пики', image: 'Король пики.png' },
+  { rank: 'Туз', suit: 'пики', image: 'Туз пики.png' },
+  // Черви
+
+  { rank: '6', suit: 'черви', image: '6 черви.png' },
+  { rank: '7', suit: 'черви', image: '7 черви.png' },
+  { rank: '8', suit: 'черви', image: '8 черви.png' },
+  { rank: '9', suit: 'черви', image: '9 черви.png' },
+  { rank: '10', suit: 'черви', image: '10 черви.png' },
+  { rank: 'Валет', suit: 'черви', image: 'Валет черви.png' },
+  { rank: 'Дама', suit: 'черви', image: 'Дама черви.png' },
+  { rank: 'Король', suit: 'черви', image: 'Король черви.png' },
+  { rank: 'Туз', suit: 'черви', image: 'Туз черви.png' },
+  // Бубны
+
+  { rank: '6', suit: 'бубны', image: '6 бубны.png' },
+  { rank: '7', suit: 'бубны', image: '7 бубны.png' },
+  { rank: '8', suit: 'бубны', image: '8 бубны.png' },
+  { rank: '9', suit: 'бубны', image: '9 бубны.png' },
+  { rank: '10', suit: 'бубны', image: '10 бубны.png' },
+  { rank: 'Валет', suit: 'бубны', image: 'Валет бубны.png' },
+  { rank: 'Дама', suit: 'бубны', image: 'Дама бубны.png' },
+  { rank: 'Король', suit: 'бубны', image: 'Король бубны.png' },
+  { rank: 'Туз', suit: 'бубны', image: 'Туз бубны.png' },
+  // Крести
+
+  { rank: '6', suit: 'крести', image: '6 крести.png' },
+  { rank: '7', suit: 'крести', image: '7 крести.png' },
+  { rank: '8', suit: 'крести', image: '8 крести.png' },
+  { rank: '9', suit: 'крести', image: '9 крести.png' },
+  { rank: '10', suit: 'крести', image: '10 крести.png' },
+  { rank: 'Валет', suit: 'крести', image: 'Валет крести.png' },
+  { rank: 'Дама', suit: 'крести', image: 'Дама крести.png' },
+  { rank: 'Король', suit: 'крести', image: 'Король крести.png' },
+  { rank: 'Туз', suit: 'крести', image: 'Туз крести.png' },
+];
+
 const displayCards = (cards, storedValue) => {
   level1AppElement.innerHTML = '';
   level2AppElement.innerHTML = '';
@@ -13,17 +58,16 @@ const displayCards = (cards, storedValue) => {
 
   shuffleDeck(cards);
 
-  cards.forEach((card, index) => {
+  // Создайте элементы карт в цикле
+  for (const data of cardData) {
     const cardElement = document.createElement('div');
     cardElement.classList.add('card');
-    cardElement.dataset.card = card; // Устанавливаем уникальный идентификатор карты
-    cardElement.dataset.index = index;
+    cardElement.dataset.rank = data.rank;
+    cardElement.dataset.suit = data.suit;
 
     const cardFront = document.createElement('div');
     cardFront.classList.add('card-front');
-
-    cardFront.style.backgroundImage = `url(./img/${card})`;
-
+    cardFront.style.backgroundImage = `url(./img/${data.image})`;
     cardElement.appendChild(cardFront);
 
     if (storedValue === 'level 1') {
@@ -33,7 +77,7 @@ const displayCards = (cards, storedValue) => {
     } else {
       level3AppElement.appendChild(cardElement);
     }
-  });
+  }
 };
 
 export const renderGamePage = (storedValue) => {
@@ -54,102 +98,4 @@ export const renderGamePage = (storedValue) => {
   const selectedCards = deck.slice(0, numberOfCards);
 
   displayCards(selectedCards, storedValue);
-
-  // Показываем карты мастью вверх в течение 5 секунд
-  setTimeout(() => {
-    level1AppElement.querySelectorAll('.card').forEach((card) => {
-      const cardFront = card.querySelector('.card-front');
-      cardFront.style.backgroundImage = 'url(./img/рубашка.png)';
-    });
-    level2AppElement.querySelectorAll('.card').forEach((card) => {
-      const cardFront = card.querySelector('.card-front');
-      cardFront.style.backgroundImage = 'url(./img/рубашка.png)';
-    });
-    level3AppElement.querySelectorAll('.card').forEach((card) => {
-      const cardFront = card.querySelector('.card-front');
-      cardFront.style.backgroundImage = 'url(./img/рубашка.png)';
-    });
-  }, 5000);
-
-  // Создадим переменные для отслеживания выбранных карт
-  let firstCard = null;
-  let secondCard = null;
-
-  // Функция для обработки кликов по картам
-  const handleCardClick = (card) => {
-    if (firstCard !== null && secondCard !== null) {
-      return; // Предотвращаем открытие более двух карт одновременно
-    }
-
-    if (firstCard === null) {
-      firstCard = card;
-    } else if (secondCard === null) {
-      secondCard = card;
-
-      if (firstCard.dataset.card === secondCard.dataset.card) {
-        // Пара совпала
-        firstCard = null;
-        secondCard = null;
-      } else {
-        // Пара не совпала, переворачиваем карты рубашкой вверх
-        setTimeout(() => {
-          firstCard.querySelector('.card-front').style.backgroundImage =
-            'url(./img/рубашка.png)';
-          secondCard.querySelector('.card-front').style.backgroundImage =
-            'url(./img/рубашка.png)';
-          firstCard = null;
-          secondCard = null;
-        }, 1000);
-      }
-    }
-  };
-
-  // Добавим обработчик кликов для всех карт
-  level1AppElement.querySelectorAll('.card').forEach((card) => {
-    card.addEventListener('click', () => {
-      if (
-        !card.classList.contains('flipped') &&
-        firstCard !== card &&
-        secondCard !== card
-      ) {
-        card.querySelector('.card-front').style.backgroundImage = `url(./img/${
-          selectedCards[card.dataset.index]
-        })`;
-        card.classList.add('flipped');
-        handleCardClick(card);
-      }
-    });
-  });
-
-  level2AppElement.querySelectorAll('.card').forEach((card) => {
-    card.addEventListener('click', () => {
-      if (
-        !card.classList.contains('flipped') &&
-        firstCard !== card &&
-        secondCard !== card
-      ) {
-        card.querySelector('.card-front').style.backgroundImage = `url(./img/${
-          selectedCards[card.dataset.index]
-        })`;
-        card.classList.add('flipped');
-        handleCardClick(card);
-      }
-    });
-  });
-
-  level3AppElement.querySelectorAll('.card').forEach((card) => {
-    card.addEventListener('click', () => {
-      if (
-        !card.classList.contains('flipped') &&
-        firstCard !== card &&
-        secondCard !== card
-      ) {
-        card.querySelector('.card-front').style.backgroundImage = `url(./img/${
-          selectedCards[card.dataset.index]
-        })`;
-        card.classList.add('flipped');
-        handleCardClick(card);
-      }
-    });
-  });
 };
